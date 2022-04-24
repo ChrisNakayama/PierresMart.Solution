@@ -1,4 +1,4 @@
-# PierresMart
+# PierresMart Snack Fun
 
 #### By _**Chris Nakayama**_
 
