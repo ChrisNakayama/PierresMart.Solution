@@ -2,7 +2,7 @@
 
 #### By _**Chris Nakayama**_
 
-#### _A web application for Pierre._
+#### _A web application for Pierre with Full CRUD._
 
 ## Technologies Used
 
