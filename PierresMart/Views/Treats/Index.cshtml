@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresMart.Models
+@model List<PierresMart.Models.Treat>
+
+<h2>Treats</h2>
+
+@if(Model.Count == 0)
+{
+  <p>No Treats have been added to the system yet.</p>
+}
+else
+{
+  <ul>
+    @foreach (Treat Treat in Model)
+    {
+      <li>@Html.ActionLink($"{Treat.Name}", "Details", new { id = Treat.TreatId})</li>
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add a Treat", "Create", "Treats")</p>

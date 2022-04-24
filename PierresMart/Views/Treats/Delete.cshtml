@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresMart.Models.Treat
+
+<h2>Delete Treat</h2>
+
+<p><strong>Delete</strong> @Html.DisplayFor(model => model.Name)</p>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TreatId)
+  <input type="submit" value="Delete" class="btn btn-danger" />
+}

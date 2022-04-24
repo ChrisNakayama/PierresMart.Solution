@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresMart.Models.Flavor
+
+<h2>Edit</h2>
+
+<h4>Edit this flavor: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  
+  @Html.LabelFor(model => model.Ingredients)
+  @Html.EditorFor(model => model.Ingredients)
+
+  @Html.LabelFor(model => model.Instructions)
+  @Html.EditorFor(model => model.Instructions)
+
+  @Html.Label("Select Treat")
+  @Html.DropDownList("TreatId", "Select Treat")
+  <input type="submit" value="Save" class="btn btn-success" />
+}

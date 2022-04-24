@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresMart.Models
+@model IEnumerable<PierresMart.Models.Flavor>
+
+<h2>Flavors for @User.Identity.Name</h2>
+
+@if (Model.Any())
+{
+  <div class="row row-cols-1 row-cols-md-2 g-3">
+    @foreach(Flavor flavor in Model)
+    {
+      <div class="col">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</h5>
+            <hr>
+            <p class="card-text">@flavor.Instructions</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}
+else
+{
+  <p>No Flavors added yet.</p>
+}
+
+<p>@Html.ActionLink("Add flavor", "Create")</p>
